@@ -6,13 +6,12 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the Ansible files may be used to install only certain pieces, such as Filebeat.
 
-  - Cyber_Security/Ansible/dvwa.yml
-  - Cyber_Security/Ansible/install-elk.yml
+  - [dvwa.yml](https://github.com/patricknakayama/Cyber_Security/blob/40ca0035ddcda676e2d4cf0e1d8fcdd3dbbaed99/Ansible/dvwa.yml)
   - [install-elk.yml](https://github.com/patricknakayama/Cyber_Security/blob/45e26950f911757432047050eecc93209479bc19/Ansible/install-elk.yml)
-  - Cyber_Security/Ansible/filebeat-playbook.yml
-  - Cyber_Security/Ansible/filebeat-config.yml
-  - Cyber_Security/Ansible/metricbeat-playbook.yml
-  - Cyber_Security/Ansible/metricbeat-config.yml
+  - [filebeat-playbook.yml](https://github.com/patricknakayama/Cyber_Security/blob/40ca0035ddcda676e2d4cf0e1d8fcdd3dbbaed99/Ansible/filebeat-playbook.yml)
+  - [filebeat-config.yml](https://github.com/patricknakayama/Cyber_Security/blob/40ca0035ddcda676e2d4cf0e1d8fcdd3dbbaed99/Ansible/filebeat-config.yml)
+  - [metricbeat-playbook.yml](https://github.com/patricknakayama/Cyber_Security/blob/40ca0035ddcda676e2d4cf0e1d8fcdd3dbbaed99/Ansible/metricbeat-playbook.yml)
+  - [metricbeat-config.yml](https://github.com/patricknakayama/Cyber_Security/blob/40ca0035ddcda676e2d4cf0e1d8fcdd3dbbaed99/Ansible/metricbeat-config.yml)
 
 This document contains the following details:
 - Description of the Topology
