@@ -8,7 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - Cyber_Security/Ansible/dvwa.yml
   - Cyber_Security/Ansible/install-elk.yml
-  - [install-elk.yml](../Ansible/install-elk.yml)
+  - [install-elk.yml](../Cyber_Security/Ansible/install-elk.yml)
   - Cyber_Security/Ansible/filebeat-playbook.yml
   - Cyber_Security/Ansible/filebeat-config.yml
   - Cyber_Security/Ansible/metricbeat-playbook.yml
