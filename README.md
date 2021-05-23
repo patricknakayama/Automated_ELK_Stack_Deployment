@@ -1,13 +1,13 @@
 # Cyber_Security
 
 ## Cyber and Network Security Projects
-Automated ELK Stack Deployment
+### Automated ELK Stack Deployment
 - Contains Project README and reference images
 
-## Cyber and Network Security Projects
-- Ansible
+## Additional Files
+### Ansible
   - Contains Ansible playbooks and configuration files
-- Diagrams
+### Diagrams
   - Contains Network diagrams
-- Linux
+### Linux
   - Contains linux bash scripts
