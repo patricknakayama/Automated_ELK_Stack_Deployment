@@ -26,7 +26,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly resilient, while the implementaion of a Jump Box provides the benefit of restricting network access to a single machine.
+Load balancing ensures that the application will be highly resilient, while the implementation of a Jump Box provides the benefit of restricting network access to a single machine.
 - Load balancers protect the availability of the network by ensuring redundancy in case one of the machines goes down.
 - Jump boxes restrict network access by creating an intermediary machine that serves as a gateway which only allows specific IP addresses into the internal network.
 
@@ -56,13 +56,13 @@ Machines within the network can only be accessed by the Jump Box, which has the 
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicy Accessible | Allowed IP Addresses                                   |
-|----------|--------------------|--------------------------------------------------------|
-| Jump-Box | Yes                | 68.109.43.202                                          |
-| Web-1    | No                 | 10.0.0.4, 68.109.43.202                                |
-| Web-2    | No                 | 10.0.0.4, 68.109.43.202                                |
-| Web-3    | No                 | 10.0.0.4, 68.109.43.202                                |
-| ELKVM    | No                 | 68.109.43.202, Any (Allows SSH from Ansible Container) |
+| Name     | Publicly Accessible | Allowed IP Addresses                                   |
+|----------|---------------------|--------------------------------------------------------|
+| Jump-Box | Yes                 | 68.109.43.202                                          |
+| Web-1    | No                  | 10.0.0.4, 68.109.43.202                                |
+| Web-2    | No                  | 10.0.0.4, 68.109.43.202                                |
+| Web-3    | No                  | 10.0.0.4, 68.109.43.202                                |
+| ELKVM    | No                  | 68.109.43.202, Any (Allows SSH from Ansible Container) |
 
 
 ### Elk Configuration
