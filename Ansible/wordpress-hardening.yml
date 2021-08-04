@@ -1,5 +1,4 @@
----
-- name: Update apt-get repo and cache
+  name: Update apt-get repo and cache
   hosts: webservers
   apt:
   - update_cache: yes
