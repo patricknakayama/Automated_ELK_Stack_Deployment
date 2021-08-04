@@ -1,9 +1,0 @@
-  name: Update apt-get repo and cache
-  hosts: webservers
-  apt:
-  - update_cache: yes
-  - force_apt_get: yes
-  - cache_valid_time: 3600
-  - name: Check if reboot is required
-  - register: reboot_required_file
-  - stat: path=/var/run/reboot-required get_md5=no
