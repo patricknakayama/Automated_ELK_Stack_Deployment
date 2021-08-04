@@ -1,8 +1,6 @@
 ---
 - name: Update apt-get repo and cache
   hosts: webservers
-  
-- name: Update
   apt:
   - update_cache: yes
   - force_apt_get: yes
