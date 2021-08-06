@@ -6,7 +6,6 @@
 - Exploitation
 
 ### Exposed Services
-_TODO: Fill out the information below._
 
 Nmap scan results for each machine reveal the below services and OS details:
 
@@ -24,8 +23,6 @@ This scan identifies the services below as potential points of entry:
   - Port 139/tcp: netbios-ssn
   - Port 445/tcp: netbios-ssn
 
-_TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
-
 The following vulnerabilities were identified on each target:
 - Target 1
   - User Enumeration (WordPress site)
@@ -42,7 +39,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 - Target 1
   - `flag1.txt`: _TODO: Insert `flag1.txt` b9bbcb33e11b80be759c4e844862482d
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
+      - Enumerated WordPress site Users with WPScan
       - _TODO: Include the command run_
 
 ```bash

@@ -10,16 +10,33 @@
 ### Network Topology
 _TODO: Fill out the information below._
 
+![Network Topology](Images/Red_vs_Blue_Team_Network_Diagram.png)
+
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**: WordPress
+- HYPER-V Manager
+  - **Operating System**: Windows 10
+  - **Purpose**: Azure Hyper-V Machine hosting Virtual Network
+  - **IP Address**: 192.168.1.0/24
+- Kali Linux
+  - **Operating System**: Debian Kali 5.4.0
+  - **Purpose**: Red Team Penetration Testing Machine
+  - **IP Address**: 192.168.1.90
+- ELK Stack
+  - **Operating System**: Ubuntu 18.04
+  - **Purpose**: ELK Stack (Elasticsearch and Kibana)
+  - **IP Address**: 192.168.1.100
+- Capstone
+  - **Operating System**: Ubuntu 18.04
+  - **Purpose**: Vulnerable Web Server
+  - **IP Address**: 192.168.1.105
+- Target 1
+  - **Operating System**: Debian GNU/Linux 8
+  - **Purpose**: WordPress Host
   - **IP Address**: 192.168.1.110
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+- Target 2
+  - **Operating System**: Debian GNU/Linux 8
+  - **Purpose**: WordPress Host
+  - **IP Address**: 192.168.1.115
 
 ### Description of Targets
 _TODO: Answer the questions below._
