@@ -1,5 +1,24 @@
 # Network Forensic Analysis Report
 
+## Table of Contents
+- Overview
+- Time Thieves
+- Vulnerable Windows Machines
+- Illegal Downloads
+
+## Overview
+You are working as a Security Engineer for X-CORP, supporting the SOC infrastructure. The SOC analysts have noticed some discrepancies with alerting in the Kibana system and the manager has asked the Security Engineering team to investigate. You will monitor live traffic on the wire to detect any abnormalities that aren't reflected in the alerting system. You are to report back all your findings to both the SOC manager and the Engineering Manager with appropriate analysis.
+
+The Security team requested this analysis because they have evidence that people are misusing the network. Specifically, they've received tips about:
+
+- "Time thieves" spotted watching YouTube during work hours.
+- At least one Windows host infected with a virus.
+- Illegal downloads.
+
+A number of machines from foreign subnets are sending traffic to this network. Your task is to collect evidence confirming the Security team's intelligence.
+
+---
+
 ## Time Thieves 
 
 At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their own web server on the corporate network. So far, Security knows the following about these time thieves:
@@ -10,8 +29,8 @@ At least two users on the network have been wasting time on YouTube. Usually, IT
 Wireshark Filters Used:
 - Domain of custom site: `ip.addr == 10.6.12.0/24`
 - Active Directory DC IP Address: `ip.addr == 10.6.12.0/24`
-- Traffic Inpection: `ip.addr == 10.6.12.12`
-- Traffic Inpection: `ip.addr == 10.6.12.203`
+- Traffic Inspection: `ip.addr == 10.6.12.12`
+- Traffic Inspection: `ip.addr == 10.6.12.203`
 - Malware Name: `ip.addr == 10.16.12.203 and http.request.method==GET`
 
 You must inspect your traffic capture to answer the following questions:
@@ -62,7 +81,7 @@ The Security team received reports of an infected Windows host on the network. T
 
 Wireshark Filters Used:
 - Host Name, IP Address, MAC Address: `ip.addr == 172.16.4.0/24`
-- Traffic Inpection: `ip.src == 172.16.4.4 && kerberos.CNameString`
+- Traffic Inspection: `ip.src == 172.16.4.4 && kerberos.CNameString`
 - Username: `ip.src == 172.16.4.205 && kerberos.CNameString`
 - Malicious Traffic: `ip.addr == 172.16.4.205 && ip.addr == 185.243.115.84`
 
@@ -75,6 +94,7 @@ Inspect your traffic to answer the following questions in your network report:
     - **Wireshark Filter**: `ip.addr == 172.16.4.0/24`
 
 ![Vulnerable Windows Machines IP](Images/VWM_ip.png)
+
 ![Vulnerable Windows Machines MAC](Images/VWM_mac.png)
 
 2. What is the username of the Windows user whose computer is infected?
@@ -142,5 +162,3 @@ Your task is to isolate torrent traffic and answer the following questions in yo
         - Look for Download request.
 
 ![Illegal Downloads Torrent](Images/ID_torrent.png)
-
----

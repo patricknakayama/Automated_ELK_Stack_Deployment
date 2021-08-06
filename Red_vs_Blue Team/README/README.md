@@ -1,7 +1,5 @@
 ## Red vs Blue Team
 
----
-
 This document contains the following details:
 - Description of Project
   - Scenario
@@ -69,5 +67,3 @@ The main purpose of this project is to simulate a SOC environment and demonstrat
 ### Network Forensics Summary
 
   - NetworkSummary.md contains the Network Forensic Analysis Report.
-
----

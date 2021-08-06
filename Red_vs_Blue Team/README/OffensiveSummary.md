@@ -102,7 +102,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag3.txt`: afc01ab56b50591e7dccf93122770cd2
     - **Exploit Used**
-      - Continued using user shell to find the MySQL database password, logged into MySQL database and found Flag 3 in wp_posts table.
+      - Continued using user shell to find the MySQL database password, logged into MySQL database, and found Flag 3 in wp_posts table.
 
   - Finding the MySQL database password:
     - **Command**: `cd /var/www/html/wordpress/`
@@ -150,7 +150,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - Used john to crack the password hash obtained from MySQL database, secured new user shell as Steven, escalated to root.
 
   - Cracking the password hash with john.
-    - Copied steven's password hash from MySQL, pasted into `~/Desktop/hash.txt`, and cracked with john to discover Steven’s password is `pink84`.
+    - Copied password hash from MySQL into `~/Desktop/hash.txt` and cracked with john to discover Steven’s password is `pink84`.
     - **Command**: `cd ~/Desktop`
     - **Command**: `john hash.txt`
 
@@ -177,5 +177,3 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
   - Screenshot of Flag 4:
 
 ![ssh output](Images/flag4.png)
-
----

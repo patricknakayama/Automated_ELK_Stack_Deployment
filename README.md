@@ -1,27 +1,19 @@
-## Red vs Blue Team
+## Cyber Security
 
-This document contains the following details:
-- Description of Project
-  - Tools and Technologies
-- Defensive Security Summary
-- Offensive Security Summary
-- Network Forensics Summary
+This Repository contains the following:
+- **Projects**
+  - Automated ELK Stack Deployment
+  - Red vs Blue Team
+- **Ansible** Playbooks and Configuration Files
+- **Diagrams** for Networks
+- **Linux** Bash Scripts
 
-### Description of Project
+---
 
-The main purpose of this project is to simulate a SOC environment and demonstrate concepts in Defensive Security, Offensive Security, and Network Forensics.
-SOC Analysts have noticed some discrepancies with alerting in the Kibana system
+### Projects
 
-#### Tools and Technologies
+#### **Automated ELK Stack Deployment:**
+*Deployed a load-balanced vulnerable web application in Azure cloud environment, secured network with firewalls and jump-box running Ansible, integrated web app with ELK stack and configured Filebeat and Metricbeat to monitor ELK logs and Docker container metrics, automated deployment with YAML playbooks to allow for CI/CD.*
 
-- Kibana/Elasticsearch Watcher
-  - Filebeat
-  - Metricbeat
-  - Packetbeat
-- Nmap
-- WPScan
-- MySQL DB
-- John
-- SSH
-- Wireshark
-- Virustotal
+#### **Red vs Blue Team**
+*Configured Kibana alerts in Elasticsearch Watcher to monitor WordPress installation, identified exposed ports and services with Nmap, enumerated site with WPScan, exploited vulnerable web server to obtain credentials from MySQL database and gain user shell via SSH, performed network forensic analysis on live malicious traffic using Wireshark and VirusTotal, identified compromised machines and provided security recommendations.*

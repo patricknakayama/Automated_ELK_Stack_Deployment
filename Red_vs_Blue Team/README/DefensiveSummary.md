@@ -12,30 +12,17 @@
 ![Network Topology](Images/Red_vs_Blue_Team_Network_Diagram.png)
 
 The following machines were identified on the network:
-- HYPER-V Manager
-  - **Operating System**: Windows 10
-  - **Purpose**: Azure Hyper-V Machine hosting Virtual Network
-  - **IP Address**: 192.168.1.0/24
-- Kali Linux
-  - **Operating System**: Debian Kali 5.4.0
-  - **Purpose**: Red Team Penetration Testing Machine
-  - **IP Address**: 192.168.1.90
-- ELK Stack
-  - **Operating System**: Ubuntu 18.04
-  - **Purpose**: ELK Stack (Elasticsearch and Kibana)
-  - **IP Address**: 192.168.1.100
-- Capstone
-  - **Operating System**: Ubuntu 18.04
-  - **Purpose**: Vulnerable Web Server
-  - **IP Address**: 192.168.1.105
-- Target 1
-  - **Operating System**: Debian GNU/Linux 8
-  - **Purpose**: WordPress Host
-  - **IP Address**: 192.168.1.110
-- Target 2
-  - **Operating System**: Debian GNU/Linux 8
-  - **Purpose**: WordPress Host
-  - **IP Address**: 192.168.1.115
+
+| Name            	| IP Address     	| Operating System   	| Purpose                                       	|
+|-----------------	|----------------	|--------------------	|-----------------------------------------------	|
+| HYPER-V Manager 	| 192.168.1.0/24 	| Windows 10         	| Azure Hyper-V Machine hosting Virtual Network 	|
+| Kali Linux      	| 192.168.1.90   	| Debian Kali 5.4.0  	| Red Team Penetration Testing Machine          	|
+| ELK Stack       	| 192.168.1.100  	| Ubuntu 18.04       	| ELK Stack (Elastisearch and Kibana)           	|
+| Capstone        	| 192.168.1.105  	| Ubuntu 18.04       	| Vulnerable Web Server                         	|
+| Target 1        	| 192.168.1.110  	| Debian GNU/Linux 8 	| WordPress Host                                	|
+| Target 2        	| 192.168.1.115  	| Debian GNU/Linux 8 	| WordPress Host                                	|
+
+---
 
 ### Description of Targets
 
@@ -78,37 +65,37 @@ Alert 3 is implemented as follows:
 
 ![CPU Usage Monitor](Images/CPU_alert.png)
 
-### Suggestions for Going Further (Optional)
+### Suggestions for Going Further
 - Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
 
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
 
-- Excessive HTTP Errors Monitor Vulnerability: Enumeration/Brute Force
+- Enumeration and Brute Force Attacks
   - **Patch**: WordPress Hardening
-    - Disable the WordPress REST API and XML-RPC if it’s not needed. 
-    - You can also configure the web server to block requests to /?author=<number>.
+    - Lock out accounts after a number of failed attempts and implement multi-factor authentication (MFA).
+    - Disable the WordPress REST API and XML-RPC if it’s not needed and configure the web server to block requests to /?author=<number>.
     - Prohibit exposure of /wp-admin and /wp-login.php.
 
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
-    - WPScan uses REST API to enumerate users.
-    - XML-RPC uses HTTP as it’s transport mechanism for data.
-    - WordPress permalinks can be set to include an author (user) and not exposing WordPress logins adds to brute force attack defense.
+  - **Why It Works**:
+    - Account lock outs will mitigate credential stuffing and multi-factor authentication will mitigate password spraying attacks.
+    - WPScan uses REST API to enumerate users, and XML-RPC uses HTTP as its transport mechanism for data.
+    - WordPress permalinks can be set to include an author and preventing exposure of WordPress login portals will help mitigate brute force attacks.
 
-- HTTP Request Size Monitor Vulnerability: Code injection in HTTP requests (XSS and CRLF) or DDOS
+- Code Injection in HTTP Requests (XSS and CRLF) and DDOS
   - **Patch**: Code Injection/DDOS Hardening
-    - Implementation of HTTP Request Limit on the web server
-    - Implementation of input validation on forms
+    - Implementation of HTTP Request Limit on the web server.
+    - Implementation of server-side input validation to prevent malicious scripts from being stored on the web server.
+    - Implementation of client-side input validation to prevent input of malicious scripts.
 
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+  - **Why It Works**:
     - If an HTTP request URL length, query string and over size limit of the request a 404 range of errors will occur.
-    - Input validation can help protect against malicious data anyone attempts to send to the server via the website or application in/across a HTTP request.
+    - Input validation can help protect against malicious data a malicious actor attempts to send to the server via the website or application in a HTTP request.
 
-- CPU Usage Monitor Vulnerability: Malicious software, programs (malware or viruses) running taking up resources
+- Malicious Code (Malware and Viruses) and Resource Utilization
   - **Patch**: Malware Hardening
-    - Implement Antivirus software
-    - Implement and configure Host Based Intrusion Detection System (HIDS)
+    - Implementation of Antivirus software
+    - Implementation of a Host Based Intrusion Detection System (HIDS)
 
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
-    - HIDS monitors and analyzes internals of computing systems.
-
----
+  - **Why It Works**:
+    - Antiviruse software is effective in detection and removal of of malicious threats against computers and a robust security option in general which should be layered into a Defense in Depth approach to Cyber Security.
+    - Host Based Intrusion Detection Systems monitor and analyze the entire file system of a host system and generate alerts if baseline deviation is detected.
